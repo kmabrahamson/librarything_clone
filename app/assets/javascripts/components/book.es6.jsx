@@ -12,18 +12,18 @@ class Book extends React.Component {
         'Content-Type': 'text/json',
         'Access-Control-Allow-Origin': '*'
       })
-    }).then(response => response.json() ).then(json => this.setState({ data: json}));
+    })
+    .then(response => response.json())
+    .then(json => this.setState({ data: json}))
   }
   render() {
-    var books = this.state.data.books;
-    console.log(books);
-    var rows = books.map(function(item) {
+    var books = this.state.data.books
+    // API response logged
+    console.log(books)
+    // eventually something that accesses nested json objects and returns table data
+    var rows = books.map(function(obj) {
       return (<tr>
-        <td>{item.author_lf}</td>
-        <td>{item.title}</td>
-        <td>{item.publicationdate}</td>
-        <td>{item.entry_date}</td>
-        <td>{item.cover}</td>
+        <td>{obj.author_lf}</td>
       </tr>)
     });
     return (
@@ -32,6 +32,6 @@ class Book extends React.Component {
           {rows}
         </tbody>
       </table>
-    );
+    )
   }
 }
