@@ -17,15 +17,22 @@ class Book extends React.Component {
     .then(json => this.setState({ data: json}))
   }
   render() {
-    var books = this.state.data.books
-    // API response logged
-    console.log(books)
-    // eventually something that accesses nested json objects and returns table data
-    var rows = books.map(function(obj) {
-      return (<tr>
-        <td>{obj.author_lf}</td>
+    var bookNames = Object.keys(this.state.data.books)
+    var kitten = ''
+    var rows = []
+
+    for (let i of bookNames) {
+      obj = this.state.data.books[i];
+      console.log(obj['author_fl'])
+      console.log(i)
+      console.log("i in bookNames")
+      rows.push(<tr key={i}>
+        <td>{obj['author_lf']}</td>
+        <td>{obj['title']}</td>
+        <td>{obj['publicationdate']}</td>
       </tr>)
-    });
+    }
+
     return (
       <table>
         <tbody>
