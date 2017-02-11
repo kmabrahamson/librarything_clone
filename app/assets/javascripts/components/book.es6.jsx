@@ -18,7 +18,7 @@ class Book extends React.Component {
   }
   render() {
     var bookNames = Object.keys(this.state.data.books)
-    var kitten = ''
+    var obj = ''
     var rows = []
 
     for (let i of bookNames) {
