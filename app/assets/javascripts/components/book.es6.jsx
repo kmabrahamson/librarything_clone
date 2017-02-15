@@ -8,6 +8,7 @@ class Book extends React.Component {
     fetch('/books_data')
     .then(response => response.json()).then(json => this.setState({ data: json }))
   }
+
   render() {
     var bookNames = Object.keys(this.state.data.books)
     console.log(bookNames)
@@ -26,7 +27,14 @@ class Book extends React.Component {
     }
 
     return (
-      <table>
+      <table className="table table-striped">
+        <thead>
+          <tr className="info">
+            <th>Author</th>
+            <th>Title</th>
+            <th>Publication Date</th>
+          </tr>
+        </thead>
         <tbody>
           {rows}
         </tbody>
