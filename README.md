@@ -1,24 +1,12 @@
-# README
+# Rails 5/React LibraryThing Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails 5/react-rails app that consumes the basic LibraryThing API, set to an internal endpoint, and sends back a random selection of 20 books per page refresh from my user account. 
 
-Things you may want to cover:
+Things I got to experiment with while building this:
+* ES6
+* fetch API
+* iterating over deeply nested objects in the returned JSON
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Potential future features:
+* prettying it up some
+* adding search functionality, using LibraryThing's other API's
