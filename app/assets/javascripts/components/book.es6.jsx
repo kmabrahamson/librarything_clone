@@ -3,7 +3,7 @@ class Book extends React.Component {
     super();
     this.state = { data: { books: [] } };
   }
-// get LibraryThing info from internal route instead of introducing potential CORS issues
+  // get LibraryThing info from internal route instead of introducing potential CORS issues
   componentDidMount () {
     fetch('/books_data')
     .then(response => response.json()).then(json => this.setState({ data: json }))
@@ -11,14 +11,16 @@ class Book extends React.Component {
 
   render() {
     var bookNames = Object.keys(this.state.data.books)
-    console.log(bookNames)
+    // inspect info in console for debugging
+    // console.log(bookNames)
     var obj = ''
     var rows = []
     // iterate through nested book objects and their attrs
     for (let i of bookNames) {
       obj = this.state.data.books[i];
-      console.log(obj['author_fl'])
-      console.log("i in bookNames")
+      // double check for debugging purposes
+      // console.log(obj['author_fl'])
+      // console.log("i in bookNames")
       rows.push(<tr key={i}>
         <td>{obj['author_lf']}</td>
         <td>{obj['title']}</td>
