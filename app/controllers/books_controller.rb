@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def books_data
-    url = 'https://www.librarything.com/api_getdata.php?userid=kabrahamson&key=3852431631&responseType=json'
+    url = 'https://www.librarything.com/api_getdata.php?userid=kabrahamson&key=ENV["LT_KEY"]&responseType=json'
     response = HTTParty.get(url)
     response.parsed_response
     @books = response.parsed_response
